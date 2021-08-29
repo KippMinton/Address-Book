@@ -9,20 +9,10 @@ namespace AddressBook
     public string Email { get; set; }
     public string Address { get; set; }
 
-    public Contact(string first, string last, string email, string address)
-    {
-      FirstName = first;
-      LastName = last;
-      Email = email;
-      Address = address;
+    public string FullName {
+      get{
+        return $"{FirstName} {LastName}";
+      }
     }
   }
 }
-
-
-
-// Contact bob = new Contact() {
-//             FirstName = "Bob", LastName = "Smith",
-//             Email = "bob.smith@email.com",
-//             Address = "100 Some Ln, Testville, TN 11111"
-//         };
