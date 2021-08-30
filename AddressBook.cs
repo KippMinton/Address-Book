@@ -14,7 +14,15 @@ namespace AddressBook
 
     public void AddContact(Contact contact)
     {
-      Contacts.Add(contact.Email, contact);
+      try
+      {
+        Contacts.Add(contact.Email, contact);
+      }
+      catch
+      {
+        Console.WriteLine("----------------------------");
+        Console.WriteLine($"Contact {contact.Email} already exists!");
+      }
     }
 
     public Contact GetByEmail(String email)
